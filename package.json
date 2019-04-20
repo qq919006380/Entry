@@ -1,0 +1,27 @@
+{
+  "name": "dg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cascader-multi": "^2.0.3",
+    "iview": "^3.4.0",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3",
+    "vue-router": "^3.0.6"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.0.0",
+    "cssnano": "^4.1.10",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
+  }
+}

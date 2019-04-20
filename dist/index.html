@@ -1,1 +1,29 @@
-<!DOCTYPE html><html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta http-equiv="X-UA-Compatible" content="ie=edge"> <title>Document</title> <style>.content{width:calc(100% - 240px)}</style> <link rel="stylesheet" href="./app.9a4a5c57.css"></head> <body> <div id="app"> <i-Menu @on-select="on" style="float:left" :open-names="['1']" active-name="1-1"> <Submenu name="1" on-select="on"> <template slot="title">test</template> <menu-item name="1-1">noe</menu-item> <menu-item name="1-2">two</menu-item> <menu-item name="1-3">three</menu-item> </Submenu> </i-Menu> <div class="content" style="float:left"> <div v-if="show==&quot;1-1&quot;"><number-one></number-one></div> <div v-if="show==&quot;1-2&quot;"><number-two></number-two></div> <div v-if="show==&quot;1-3&quot;"><number-three></number-three></div> </div>  </div> <script src="./app.83d09c0f.js"></script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>.content {
+            width: calc(100% - 240px)
+        }</style>
+<link rel="stylesheet" href="/app.c328ef1a.css"></head>
+<body>
+    <div id="app">
+        <i-Menu @on-select="onMenu" style="float:left" :open-names="['1']" active-name="one">
+            <Submenu name="1" on-select="on">
+                <template slot="title">test</template>
+                <menu-item name="one">noe</menu-item>
+                <menu-item name="two">two</menu-item>
+                <menu-item name="three">three</menu-item>
+            </Submenu>
+        </i-Menu>
+        <div class="content" style="float:left">
+            <router-view></router-view>
+        </div>
+    </div>
+    <script src="/app.c328ef1a.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+/node_modules
+/.cache
+/package-lock.json
+/view
+/app.js
+/index.html
+/package.json

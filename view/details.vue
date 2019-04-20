@@ -71,9 +71,6 @@
 import db from "./db.json";
 import Bus from "./eventBus.js";
 export default {
-  created() {
-    console.log(db.switch_list);
-  },
   data() {
     return {
       items: [
@@ -110,6 +107,7 @@ export default {
   methods: {
     print() {
       Bus.$emit("getTarget", 'this.ipt_data');
+      // this.$router.push('print');
     }
   }
 };

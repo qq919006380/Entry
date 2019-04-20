@@ -13,6 +13,18 @@ Vue.use(iView);
 new Vue({
     router,
     el: "#app",
+    data() {
+        return {
+            activeName: this.$route.name
+        }
+    },
+    watch: {
+        '$route'() {
+            this.activeName = this.$route.name
+        },
+    },
+    mounted() {
+    },
     methods: {
         onMenu(name) {
             this.$router.push(name);

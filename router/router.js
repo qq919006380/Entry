@@ -1,9 +1,9 @@
-import One from '../view/one.vue';
-import Two from '../view/two.vue';
-import Three from '../view/three.vue';
+import List from '../view/list.vue';
+import Details from '../view/details.vue';
+import Print from '../view/print.vue';
 
 export default [
-    { path: '/one', component: One },
-    { path: '/two', component: Two },
-    { path: '/three', component: Three }
+    { path: '/list', component: List, name: 'list', },
+    { path: '/details', component: Details, name: 'details', },
+    { path: '/print', component: Print, name: 'print', }
 ]

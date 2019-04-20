@@ -59,7 +59,8 @@ export default {
   },
   methods: {
     on() {
-      console.log(this.xxx);
+      
+
     }
   }
 };

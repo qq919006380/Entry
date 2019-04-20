@@ -69598,7 +69598,7 @@ function patchScopedSlots (instance) {
   }
 }
 
-},{}],"view/one.vue":[function(require,module,exports) {
+},{}],"view/list.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -69670,7 +69670,11 @@ var _default = {
     ok: function ok() {}
   },
   data: function data() {
-    var _ref, _ref2, _ref3, _ref4;
+    var _this = this,
+        _ref,
+        _ref2,
+        _ref3,
+        _ref4;
 
     return {
       modal1: false,
@@ -69709,6 +69713,8 @@ var _default = {
             },
             on: {
               click: function click() {
+                _this.$router.push('details');
+
                 console.log(params.row);
               }
             }
@@ -69736,14 +69742,14 @@ var _default = {
   }
 };
 exports.default = _default;
-        var $d0a83f = exports.default || module.exports;
+        var $8d2e4b = exports.default || module.exports;
       
-      if (typeof $d0a83f === 'function') {
-        $d0a83f = $d0a83f.options;
+      if (typeof $8d2e4b === 'function') {
+        $8d2e4b = $8d2e4b.options;
       }
     
         /* template */
-        Object.assign($d0a83f, (function () {
+        Object.assign($8d2e4b, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -69957,7 +69963,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: "data-v-d0a83f",
+            _scopeId: "data-v-8d2e4b",
             functional: undefined
           };
         })());
@@ -69970,9 +69976,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$d0a83f', $d0a83f);
+            api.createRecord('$8d2e4b', $8d2e4b);
           } else {
-            api.reload('$d0a83f', $d0a83f);
+            api.reload('$8d2e4b', $8d2e4b);
           }
         }
 
@@ -70142,7 +70148,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = new _vue.default();
 
 exports.default = _default;
-},{"vue":"node_modules/vue/dist/vue.common.js"}],"view/two.vue":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js"}],"view/details.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -70226,9 +70232,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 var _default = {
-  created: function created() {
-    console.log(_db.default.switch_list);
-  },
   data: function data() {
     return {
       items: [{
@@ -70299,19 +70302,20 @@ var _default = {
   },
   methods: {
     print: function print() {
-      _eventBus.default.$emit("getTarget", 'this.ipt_data');
+      _eventBus.default.$emit("getTarget", 'this.ipt_data'); // this.$router.push('print');
+
     }
   }
 };
 exports.default = _default;
-        var $203aba = exports.default || module.exports;
+        var $a216c7 = exports.default || module.exports;
       
-      if (typeof $203aba === 'function') {
-        $203aba = $203aba.options;
+      if (typeof $a216c7 === 'function') {
+        $a216c7 = $a216c7.options;
       }
     
         /* template */
-        Object.assign($203aba, (function () {
+        Object.assign($a216c7, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -70535,7 +70539,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: "data-v-203aba",
+            _scopeId: "data-v-a216c7",
             functional: undefined
           };
         })());
@@ -70548,9 +70552,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$203aba', $203aba);
+            api.createRecord('$a216c7', $a216c7);
           } else {
-            api.reload('$203aba', $203aba);
+            api.reload('$a216c7', $a216c7);
           }
         }
 
@@ -70561,7 +70565,7 @@ render._withStripped = true
       
       }
     })();
-},{"./db.json":"view/db.json","./eventBus.js":"view/eventBus.js","_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/three.vue":[function(require,module,exports) {
+},{"./db.json":"view/db.json","./eventBus.js":"view/eventBus.js","_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/print.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -70633,20 +70637,18 @@ var _default = {
     });
   },
   methods: {
-    on: function on() {
-      console.log(this.xxx);
-    }
+    on: function on() {}
   }
 };
 exports.default = _default;
-        var $f21c63 = exports.default || module.exports;
+        var $dea866 = exports.default || module.exports;
       
-      if (typeof $f21c63 === 'function') {
-        $f21c63 = $f21c63.options;
+      if (typeof $dea866 === 'function') {
+        $dea866 = $dea866.options;
       }
     
         /* template */
-        Object.assign($f21c63, (function () {
+        Object.assign($dea866, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -70769,7 +70771,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: "data-v-f21c63",
+            _scopeId: "data-v-dea866",
             functional: undefined
           };
         })());
@@ -70782,9 +70784,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$f21c63', $f21c63);
+            api.createRecord('$dea866', $dea866);
           } else {
-            api.reload('$f21c63', $f21c63);
+            api.reload('$dea866', $dea866);
           }
         }
 
@@ -70803,26 +70805,29 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _one = _interopRequireDefault(require("../view/one.vue"));
+var _list = _interopRequireDefault(require("../view/list.vue"));
 
-var _two = _interopRequireDefault(require("../view/two.vue"));
+var _details = _interopRequireDefault(require("../view/details.vue"));
 
-var _three = _interopRequireDefault(require("../view/three.vue"));
+var _print = _interopRequireDefault(require("../view/print.vue"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = [{
-  path: '/one',
-  component: _one.default
+  path: '/list',
+  component: _list.default,
+  name: 'list'
 }, {
-  path: '/two',
-  component: _two.default
+  path: '/details',
+  component: _details.default,
+  name: 'details'
 }, {
-  path: '/three',
-  component: _three.default
+  path: '/print',
+  component: _print.default,
+  name: 'print'
 }];
 exports.default = _default;
-},{"../view/one.vue":"view/one.vue","../view/two.vue":"view/two.vue","../view/three.vue":"view/three.vue"}],"node_modules/vue-router/dist/vue-router.esm.js":[function(require,module,exports) {
+},{"../view/list.vue":"view/list.vue","../view/details.vue":"view/details.vue","../view/print.vue":"view/print.vue"}],"node_modules/vue-router/dist/vue-router.esm.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -73495,6 +73500,17 @@ _vue.default.use(_iview.default);
 new _vue.default({
   router: router,
   el: "#app",
+  data: function data() {
+    return {
+      activeName: this.$route.name
+    };
+  },
+  watch: {
+    '$route': function $route() {
+      this.activeName = this.$route.name;
+    }
+  },
+  mounted: function mounted() {},
   methods: {
     onMenu: function onMenu(name) {
       this.$router.push(name);
@@ -73528,7 +73544,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "5263" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "6541" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

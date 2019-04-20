@@ -108,6 +108,7 @@ export default {
                   },
                   on: {
                     click: () => {
+                      this.$router.push('details');
                       console.log(params.row)
                     }
                   }

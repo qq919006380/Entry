@@ -71,6 +71,10 @@
   margin: 50px 0;
   font-size: 24px;
 }
+.title >div[data-v-dea866]{
+  display: inline-block;
+  margin: 10px 50px
+}
 .underline[data-v-dea866] {
   text-decoration: underline;
 }
@@ -81,14 +85,16 @@
 }
 .txt .line[data-v-dea866] {
   width: 80px;
-  border-bottom: solid 1px;
+  /* border-bottom: solid 1px; */
+  text-decoration: underline;
   display: inline-block;
+  text-align: center;
 }
 .parameter[data-v-dea866] {
   margin: 20px 0;
 }
 .parameter > div[data-v-dea866] {
-  background: pink;
+  background: #eee;
   padding: 80px 0;
 }
 .img[data-v-dea866] {
@@ -114,7 +120,7 @@
   width: 139px;
   height: 139px;
 }
-.footer[data-v-dea866]{
+.footer[data-v-dea866] {
   text-align: center;
-  margin: 50px 0
+  margin: 50px 0;
 }

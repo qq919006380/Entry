@@ -108,13 +108,15 @@ export default {
                   },
                   on: {
                     click: () => {
-                      this.$router.push('details');
-                      console.log(params.row)
+                      this.$router.push({
+                        name: "details",
+                        params: params.row
+                      });
                     }
                   }
                 },
                 "详情订单"
-              ),
+              )
             ]);
           }
         }
@@ -123,30 +125,38 @@ export default {
         {
           id: "12",
           date: 18,
-          client: "name",
+          client: "Abbey",
           date: "2016-10-03",
-          phone: "12132"
+          phone: "12132",
+          salesperson: "刘德华",
+          amount: "1200000"
         },
         {
           id: "34",
           date: 24,
-          client: "name",
+          client: "Aberdeen",
           date: "2016-10-01",
-          phone: "12132"
+          phone: "12132",
+          salesperson: "梁朝伟",
+          amount: "900000"
         },
         {
           id: "43",
           date: 30,
-          client: "name",
+          client: "Adela",
           date: "2016-10-02",
-          phone: "12132"
+          phone: "12132",
+          salesperson: "周润发",
+          amount: "5200000"
         },
         {
           id: "2",
           date: 26,
-          client: "name",
+          client: "Adelina",
           date: "2016-10-04",
-          phone: "12132"
+          phone: "12132",
+          salesperson: "刘德华",
+          amount: "8800000"
         }
       ]
     };

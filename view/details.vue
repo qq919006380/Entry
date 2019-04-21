@@ -94,22 +94,27 @@ export default {
         { name: "name", x: "12", y: "122" }
       ],
       ipt_data: {
-        id: 20020032300,
-        date: "2019-04-20",
-        client: "",
-        phone: "",
-        salesperson: "",
-        amount: "",
-        status: "",
-        map: "",
-        period: "",
-        quantity: "",
-        code: "",
+        id: 20020032300,  //编号
+        date: "2019-04-20", //日期
+        client: "", //客户
+        phone: "",  //电话
+        salesperson: "",//销售人
+        amount: "",//金额
+        status: "",//状态
+        map: "",//地址
+        period: "",//发货期
+        quantity: "", //数量
         item: {}
       },
       code: [],
       codes: db.switch_list
     };
+  },
+  mounted(){
+    console.log(this.$route.params)
+    for(var x in this.$route.params){
+      this.ipt_data[x]=this.$route.params[x]
+    }
   },
   methods: {
     save() {
@@ -172,3 +177,4 @@ export default {
   margin: 60px 0;
 }
 </style>
+

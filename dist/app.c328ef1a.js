@@ -69713,9 +69713,10 @@ var _default = {
             },
             on: {
               click: function click() {
-                _this.$router.push('details');
-
-                console.log(params.row);
+                _this.$router.push({
+                  name: "details",
+                  params: params.row
+                });
               }
             }
           }, "详情订单")]);
@@ -69724,20 +69725,20 @@ var _default = {
       data1: [(_ref = {
         id: "12",
         date: 18,
-        client: "name"
-      }, _defineProperty(_ref, "date", "2016-10-03"), _defineProperty(_ref, "phone", "12132"), _ref), (_ref2 = {
+        client: "Abbey"
+      }, _defineProperty(_ref, "date", "2016-10-03"), _defineProperty(_ref, "phone", "12132"), _defineProperty(_ref, "salesperson", "刘德华"), _defineProperty(_ref, "amount", "1200000"), _ref), (_ref2 = {
         id: "34",
         date: 24,
-        client: "name"
-      }, _defineProperty(_ref2, "date", "2016-10-01"), _defineProperty(_ref2, "phone", "12132"), _ref2), (_ref3 = {
+        client: "Aberdeen"
+      }, _defineProperty(_ref2, "date", "2016-10-01"), _defineProperty(_ref2, "phone", "12132"), _defineProperty(_ref2, "salesperson", "梁朝伟"), _defineProperty(_ref2, "amount", "900000"), _ref2), (_ref3 = {
         id: "43",
         date: 30,
-        client: "name"
-      }, _defineProperty(_ref3, "date", "2016-10-02"), _defineProperty(_ref3, "phone", "12132"), _ref3), (_ref4 = {
+        client: "Adela"
+      }, _defineProperty(_ref3, "date", "2016-10-02"), _defineProperty(_ref3, "phone", "12132"), _defineProperty(_ref3, "salesperson", "周润发"), _defineProperty(_ref3, "amount", "5200000"), _ref3), (_ref4 = {
         id: "2",
         date: 26,
-        client: "name"
-      }, _defineProperty(_ref4, "date", "2016-10-04"), _defineProperty(_ref4, "phone", "12132"), _ref4)]
+        client: "Adelina"
+      }, _defineProperty(_ref4, "date", "2016-10-04"), _defineProperty(_ref4, "phone", "12132"), _defineProperty(_ref4, "salesperson", "刘德华"), _defineProperty(_ref4, "amount", "8800000"), _ref4)]
     };
   }
 };
@@ -70275,21 +70276,37 @@ var _default = {
       }],
       ipt_data: {
         id: 20020032300,
+        //编号
         date: "2019-04-20",
+        //日期
         client: "",
+        //客户
         phone: "",
+        //电话
         salesperson: "",
+        //销售人
         amount: "",
+        //金额
         status: "",
+        //状态
         map: "",
+        //地址
         period: "",
+        //发货期
         quantity: "",
-        code: "",
+        //数量
         item: {}
       },
       code: [],
       codes: _db.default.switch_list
     };
+  },
+  mounted: function mounted() {
+    console.log(this.$route.params);
+
+    for (var x in this.$route.params) {
+      this.ipt_data[x] = this.$route.params[x];
+    }
   },
   methods: {
     save: function save() {
@@ -70660,6 +70677,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 var _default = (_created$data$created = {
   created: function created() {
     console.log(this.$route);
@@ -70671,7 +70692,9 @@ var _default = (_created$data$created = {
   }
 }, _defineProperty(_created$data$created, "created", function created() {
   this.printData = this.$route.params;
-}), _defineProperty(_created$data$created, "methods", {}), _created$data$created);
+}), _defineProperty(_created$data$created, "methods", {
+  print: function print() {}
+}), _created$data$created);
 
 exports.default = _default;
         var $dea866 = exports.default || module.exports;
@@ -70688,22 +70711,26 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "title" }, [
-      _c("span", [_vm._v("编号:")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "underline" }, [
-        _vm._v(_vm._s(_vm.printData.id))
+      _c("div", [
+        _c("span", [_vm._v("编号:")]),
+        _vm._v(" "),
+        _c("span", { staticClass: "underline" }, [
+          _vm._v(_vm._s(_vm.printData.id))
+        ])
       ]),
       _vm._v(" "),
-      _c("span", [_vm._v("时间:")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "underline" }, [
-        _vm._v(_vm._s(_vm.printData.date))
+      _c("div", [
+        _c("span", [_vm._v("时间:")]),
+        _vm._v(" "),
+        _c("span", { staticClass: "underline" }, [
+          _vm._v(_vm._s(_vm.printData.date))
+        ])
       ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "txt" }, [
       _c("div", [
-        _c("span", [_vm._v("客户")]),
+        _c("span", [_vm._v("客户:")]),
         _vm._v(" "),
         _c("span", { staticClass: "line" }, [
           _vm._v(_vm._s(_vm.printData.client))
@@ -70711,7 +70738,7 @@ exports.default = _default;
       ]),
       _vm._v(" "),
       _c("div", [
-        _c("span", [_vm._v("电话")]),
+        _c("span", [_vm._v("电话:")]),
         _vm._v(" "),
         _c("span", { staticClass: "line" }, [
           _vm._v(_vm._s(_vm.printData.phone))
@@ -70719,7 +70746,7 @@ exports.default = _default;
       ]),
       _vm._v(" "),
       _c("div", [
-        _c("span", [_vm._v("销售人")]),
+        _c("span", [_vm._v("销售人:")]),
         _vm._v(" "),
         _c("span", { staticClass: "line" }, [
           _vm._v(_vm._s(_vm.printData.salesperson))
@@ -70727,7 +70754,7 @@ exports.default = _default;
       ]),
       _vm._v(" "),
       _c("div", [
-        _c("span", [_vm._v("金额")]),
+        _c("span", [_vm._v("金额:")]),
         _vm._v(" "),
         _c("span", { staticClass: "line" }, [
           _vm._v(_vm._s(_vm.printData.amount))
@@ -70735,7 +70762,7 @@ exports.default = _default;
       ]),
       _vm._v(" "),
       _c("div", [
-        _c("span", [_vm._v("状态")]),
+        _c("span", [_vm._v("状态:")]),
         _vm._v(" "),
         _c("span", { staticClass: "line" }, [
           _vm._v(_vm._s(_vm.printData.status))
@@ -70743,13 +70770,13 @@ exports.default = _default;
       ]),
       _vm._v(" "),
       _c("div", [
-        _c("span", [_vm._v("地址")]),
+        _c("span", [_vm._v("地址:")]),
         _vm._v(" "),
         _c("span", { staticClass: "line" }, [_vm._v(_vm._s(_vm.printData.map))])
       ]),
       _vm._v(" "),
       _c("div", [
-        _c("span", [_vm._v("发货时间")]),
+        _c("span", [_vm._v("发货时间:")]),
         _vm._v(" "),
         _c("span", { staticClass: "line" }, [
           _vm._v(_vm._s(_vm.printData.period))
@@ -70757,7 +70784,7 @@ exports.default = _default;
       ]),
       _vm._v(" "),
       _c("div", [
-        _c("span", [_vm._v("数量")]),
+        _c("span", [_vm._v("数量:")]),
         _vm._v(" "),
         _c("span", { staticClass: "line" }, [
           _vm._v(_vm._s(_vm.printData.quantity))
@@ -73584,7 +73611,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1646" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "11537" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

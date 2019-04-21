@@ -1,42 +1,46 @@
 <template>
   <div>
     <div class="title">
-      <span>编号:</span>
-      <span class="underline">{{printData.id}}</span>
-      <span>时间:</span>
-      <span class="underline">{{printData.date}}</span>
+      <div>
+        <span>编号:</span>
+        <span class="underline">{{printData.id}}</span>
+      </div>
+      <div>
+        <span>时间:</span>
+        <span class="underline">{{printData.date}}</span>
+      </div>
     </div>
     <div class="txt">
       <div>
-        <span>客户</span>
+        <span>客户:</span>
         <span class="line">{{printData.client}}</span>
       </div>
       <div>
-        <span>电话</span>
+        <span>电话:</span>
         <span class="line">{{printData.phone}}</span>
       </div>
       <div>
-        <span>销售人</span>
+        <span>销售人:</span>
         <span class="line">{{printData.salesperson}}</span>
       </div>
       <div>
-        <span>金额</span>
+        <span>金额:</span>
         <span class="line">{{printData.amount}}</span>
       </div>
       <div>
-        <span>状态</span>
+        <span>状态:</span>
         <span class="line">{{printData.status}}</span>
       </div>
       <div>
-        <span>地址</span>
+        <span>地址:</span>
         <span class="line">{{printData.map}}</span>
       </div>
       <div>
-        <span>发货时间</span>
+        <span>发货时间:</span>
         <span class="line">{{printData.period}}</span>
       </div>
       <div>
-        <span>数量</span>
+        <span>数量:</span>
         <span class="line">{{printData.quantity}}</span>
       </div>
     </div>
@@ -52,7 +56,7 @@
       </div>
     </div>
     <div class="footer">
-      <Button size='large' @click="print">打印</Button>
+      <Button size="large" @click="print">打印</Button>
     </div>
   </div>
 </template>
@@ -70,7 +74,9 @@ export default {
   created() {
     this.printData = this.$route.params;
   },
-  methods: {}
+  methods: {
+    print() {}
+  }
 };
 </script>
 
@@ -79,6 +85,10 @@ export default {
   text-align: center;
   margin: 50px 0;
   font-size: 24px;
+}
+.title >div{
+  display: inline-block;
+  margin: 10px 50px
 }
 .underline {
   text-decoration: underline;
@@ -90,14 +100,16 @@ export default {
 }
 .txt .line {
   width: 80px;
-  border-bottom: solid 1px;
+  /* border-bottom: solid 1px; */
+  text-decoration: underline;
   display: inline-block;
+  text-align: center;
 }
 .parameter {
   margin: 20px 0;
 }
 .parameter > div {
-  background: pink;
+  background: #eee;
   padding: 80px 0;
 }
 .img {
@@ -123,8 +135,8 @@ export default {
   width: 139px;
   height: 139px;
 }
-.footer{
+.footer {
   text-align: center;
-  margin: 50px 0
+  margin: 50px 0;
 }
 </style>

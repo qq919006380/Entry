@@ -45,8 +45,14 @@
       </div>
     </div>
     <div class="parameter">
-      <h1>title:</h1>
-      <div>固定参数</div>
+      <h1>title:{{printData.code}}</h1>
+      <div v-for="item in printData.items" class="fixed">
+        <div class="fixed box">
+          <div>name:{{item.name}}</div>
+          <div>x:{{item.x}}</div>
+          <div>y:{{item.y}}</div>
+        </div>
+      </div>
     </div>
     <div class="img">
       <div class="titleImg">img</div>
@@ -64,7 +70,7 @@
 <script>
 export default {
   created() {
-    console.log(this.$route);
+    console.log(this.printData);
   },
   data() {
     return {
@@ -106,11 +112,20 @@ export default {
   text-align: center;
 }
 .parameter {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 .parameter > div {
   background: #eee;
-  padding: 80px 0;
+  padding: 40px 0;
+}
+.fixed{
+  display: inline-block
+}
+.fixed .box{
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border: solid 1px
 }
 .img {
   text-align: center;

@@ -1,10 +1,11 @@
 {
     "switch_list": [
         {
-            "id": 8,
+            "value": 8,
+            "multiple": true,
             "children": [
                 {
-                    "id": 71,
+                    "value": 71,
                     "option_id": null,
                     "label": "彩钢门"
                 }
@@ -12,32 +13,34 @@
             "switch_id": null,
             "sort": 0,
             "label": "风格"
+            
         },
         {
-            "id": 10,
+            "value": 10,
+            "multiple": true,
             "children": [
                 {
-                    "id": 72,
+                    "value": 72,
                     "option_id": 71,
                     "label": "单门"
                 },
                 {
-                    "id": 73,
+                    "value": 73,
                     "option_id": 71,
                     "label": "四门平开"
                 },
                 {
-                    "id": 96,
+                    "value": 96,
                     "option_id": 71,
                     "label": "四门子母"
                 },
                 {
-                    "id": 97,
+                    "value": 97,
                     "option_id": 71,
                     "label": "子母门"
                 },
                 {
-                    "id": 98,
+                    "value": 98,
                     "option_id": 71,
                     "label": "双门"
                 }
@@ -47,10 +50,10 @@
             "label": "类型"
         },
         {
-            "id": 17,
+            "value": 17,
             "children": [
                 {
-                    "id": 77,
+                    "value": 77,
                     "option_id": 73,
                     "label": "拼接"
                 }
@@ -60,15 +63,15 @@
             "label": "企料"
         },
         {
-            "id": 28,
+            "value": 28,
             "children": [
                 {
-                    "id": 79,
+                    "value": 79,
                     "option_id": 77,
                     "label": "内开"
                 },
                 {
-                    "id": 93,
+                    "value": 93,
                     "option_id": 77,
                     "label": "外开"
                 }
@@ -78,20 +81,20 @@
             "label": "开向"
         },
         {
-            "id": 33,
+            "value": 33,
             "children": [
                 {
-                    "id": 80,
+                    "value": 80,
                     "option_id": 79,
                     "label": "6分+8分"
                 },
                 {
-                    "id": 94,
+                    "value": 94,
                     "option_id": 79,
                     "label": "6分"
                 },
                 {
-                    "id": 95,
+                    "value": 95,
                     "option_id": 79,
                     "label": "8分"
                 }
@@ -101,20 +104,20 @@
             "label": "工艺"
         },
         {
-            "id": 49,
+            "value": 49,
             "children": [
                 {
-                    "id": 81,
+                    "value": 81,
                     "option_id": 80,
                     "label": "全花"
                 },
                 {
-                    "id": 84,
+                    "value": 84,
                     "option_id": 80,
                     "label": "三七花"
                 },
                 {
-                    "id": 85,
+                    "value": 85,
                     "option_id": 80,
                     "label": "上下花"
                 }
@@ -124,25 +127,25 @@
             "label": "门花"
         },
         {
-            "id": 50,
+            "value": 50,
             "children": [
                 {
-                    "id": 82,
+                    "value": 82,
                     "option_id": 81,
                     "label": "1+2+1窗头"
                 },
                 {
-                    "id": 86,
+                    "value": 86,
                     "option_id": 81,
                     "label": "1窗头"
                 },
                 {
-                    "id": 89,
+                    "value": 89,
                     "option_id": 84,
                     "label": "拼接四门内外开6分-8分工艺 三七花   1+2+1"
                 },
                 {
-                    "id": 91,
+                    "value": 91,
                     "option_id": 85,
                     "label": "拼接四门内外开6分-8分工艺 上下花 1+2+1窗头 \t\t "
                 }
@@ -152,25 +155,25 @@
             "label": "窗头"
         },
         {
-            "id": 51,
+            "value": 51,
             "children": [
                 {
-                    "id": 83,
+                    "value": 83,
                     "option_id": 82,
                     "label": "有"
                 },
                 {
-                    "id": 87,
+                    "value": 87,
                     "option_id": 86,
                     "label": "拼接四门内外开6分-8分工艺 全花 1+1+1+1   款式1"
                 },
                 {
-                    "id": 90,
+                    "value": 90,
                     "option_id": 84,
                     "label": "拼接四门内外开6分-8分工艺 三七花 1+2+1窗头 A款罗马柱"
                 },
                 {
-                    "id": 92,
+                    "value": 92,
                     "option_id": 91,
                     "label": "拼接四门内外开6分-8分工艺 上下花 1+2+1窗头  a款"
                 }

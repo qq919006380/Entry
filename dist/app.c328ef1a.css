@@ -91,11 +91,20 @@
   text-align: center;
 }
 .parameter[data-v-dea866] {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 .parameter > div[data-v-dea866] {
   background: #eee;
-  padding: 80px 0;
+  padding: 40px 0;
+}
+.fixed[data-v-dea866]{
+  display: inline-block
+}
+.fixed .box[data-v-dea866]{
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border: solid 1px
 }
 .img[data-v-dea866] {
   text-align: center;

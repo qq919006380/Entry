@@ -69954,9 +69954,10 @@ render._withStripped = true
 },{"_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/db.json":[function(require,module,exports) {
 module.exports = {
   "switch_list": [{
-    "id": 8,
+    "value": 8,
+    "multiple": true,
     "children": [{
-      "id": 71,
+      "value": 71,
       "option_id": null,
       "label": "彩钢门"
     }],
@@ -69964,25 +69965,26 @@ module.exports = {
     "sort": 0,
     "label": "风格"
   }, {
-    "id": 10,
+    "value": 10,
+    "multiple": true,
     "children": [{
-      "id": 72,
+      "value": 72,
       "option_id": 71,
       "label": "单门"
     }, {
-      "id": 73,
+      "value": 73,
       "option_id": 71,
       "label": "四门平开"
     }, {
-      "id": 96,
+      "value": 96,
       "option_id": 71,
       "label": "四门子母"
     }, {
-      "id": 97,
+      "value": 97,
       "option_id": 71,
       "label": "子母门"
     }, {
-      "id": 98,
+      "value": 98,
       "option_id": 71,
       "label": "双门"
     }],
@@ -69990,9 +69992,9 @@ module.exports = {
     "sort": 0,
     "label": "类型"
   }, {
-    "id": 17,
+    "value": 17,
     "children": [{
-      "id": 77,
+      "value": 77,
       "option_id": 73,
       "label": "拼接"
     }],
@@ -70000,13 +70002,13 @@ module.exports = {
     "sort": 0,
     "label": "企料"
   }, {
-    "id": 28,
+    "value": 28,
     "children": [{
-      "id": 79,
+      "value": 79,
       "option_id": 77,
       "label": "内开"
     }, {
-      "id": 93,
+      "value": 93,
       "option_id": 77,
       "label": "外开"
     }],
@@ -70014,17 +70016,17 @@ module.exports = {
     "sort": 0,
     "label": "开向"
   }, {
-    "id": 33,
+    "value": 33,
     "children": [{
-      "id": 80,
+      "value": 80,
       "option_id": 79,
       "label": "6分+8分"
     }, {
-      "id": 94,
+      "value": 94,
       "option_id": 79,
       "label": "6分"
     }, {
-      "id": 95,
+      "value": 95,
       "option_id": 79,
       "label": "8分"
     }],
@@ -70032,17 +70034,17 @@ module.exports = {
     "sort": 0,
     "label": "工艺"
   }, {
-    "id": 49,
+    "value": 49,
     "children": [{
-      "id": 81,
+      "value": 81,
       "option_id": 80,
       "label": "全花"
     }, {
-      "id": 84,
+      "value": 84,
       "option_id": 80,
       "label": "三七花"
     }, {
-      "id": 85,
+      "value": 85,
       "option_id": 80,
       "label": "上下花"
     }],
@@ -70050,21 +70052,21 @@ module.exports = {
     "sort": 0,
     "label": "门花"
   }, {
-    "id": 50,
+    "value": 50,
     "children": [{
-      "id": 82,
+      "value": 82,
       "option_id": 81,
       "label": "1+2+1窗头"
     }, {
-      "id": 86,
+      "value": 86,
       "option_id": 81,
       "label": "1窗头"
     }, {
-      "id": 89,
+      "value": 89,
       "option_id": 84,
       "label": "拼接四门内外开6分-8分工艺 三七花   1+2+1"
     }, {
-      "id": 91,
+      "value": 91,
       "option_id": 85,
       "label": "拼接四门内外开6分-8分工艺 上下花 1+2+1窗头 \t\t "
     }],
@@ -70072,21 +70074,21 @@ module.exports = {
     "sort": 0,
     "label": "窗头"
   }, {
-    "id": 51,
+    "value": 51,
     "children": [{
-      "id": 83,
+      "value": 83,
       "option_id": 82,
       "label": "有"
     }, {
-      "id": 87,
+      "value": 87,
       "option_id": 86,
       "label": "拼接四门内外开6分-8分工艺 全花 1+1+1+1   款式1"
     }, {
-      "id": 90,
+      "value": 90,
       "option_id": 84,
       "label": "拼接四门内外开6分-8分工艺 三七花 1+2+1窗头 A款罗马柱"
     }, {
-      "id": 92,
+      "value": 92,
       "option_id": 91,
       "label": "拼接四门内外开6分-8分工艺 上下花 1+2+1窗头  a款"
     }],
@@ -70186,55 +70188,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = {
   data: function data() {
     return {
-      items: [{
-        name: "name",
-        x: "12",
-        y: "122"
-      }, {
-        name: "name",
-        x: "12",
-        y: "122"
-      }, {
-        name: "name",
-        x: "12",
-        y: "122"
-      }, {
-        name: "name",
-        x: "12",
-        y: "122"
-      }, {
-        name: "name",
-        x: "12",
-        y: "122"
-      }, {
-        name: "name",
-        x: "12",
-        y: "122"
-      }, {
-        name: "name",
-        x: "12",
-        y: "122"
-      }, {
-        name: "name",
-        x: "12",
-        y: "122"
-      }, {
-        name: "name",
-        x: "12",
-        y: "122"
-      }, {
-        name: "name",
-        x: "12",
-        y: "122"
-      }, {
-        name: "name",
-        x: "12",
-        y: "122"
-      }, {
-        name: "name",
-        x: "12",
-        y: "122"
-      }],
       ipt_data: {
         id: 20020032300,
         //编号
@@ -70256,24 +70209,73 @@ var _default = {
         //发货期
         quantity: "",
         //数量
-        item: {}
+        code: [],
+        items: [{
+          name: "as",
+          x: "12",
+          y: "1226"
+        }, {
+          name: "ds",
+          x: "1321",
+          y: "1225"
+        }, {
+          name: "fs",
+          x: "2132",
+          y: "1242"
+        }, {
+          name: "sc",
+          x: "22",
+          y: "1223"
+        }, {
+          name: "re",
+          x: "36",
+          y: "1222"
+        }, {
+          name: "hg",
+          x: "123",
+          y: "1221"
+        }, {
+          name: "ui",
+          x: "19",
+          y: "12223"
+        }, {
+          name: "hj",
+          x: "22",
+          y: "1222"
+        }, {
+          name: "mh",
+          x: "132",
+          y: "1222"
+        }, {
+          name: "kh",
+          x: "12",
+          y: "1212"
+        }, {
+          name: "sg",
+          x: "112",
+          y: "922"
+        }, {
+          name: "dv",
+          x: "142",
+          y: "1228"
+        }]
       },
-      code: [],
       codes: _db.default.switch_list
     };
   },
   mounted: function mounted() {
-    console.log(this.$route.params);
-
     for (var x in this.$route.params) {
       this.ipt_data[x] = this.$route.params[x];
     }
   },
   methods: {
+    search: function search() {
+      console.log(this.ipt_data.code);
+    },
     save: function save() {
       this.$Modal.success({
-        title: '消息',
-        content: '保存成功！'
+        title: "消息",
+        content: "保存成功！"
       });
     },
     print: function print() {
@@ -70473,11 +70475,11 @@ exports.default = _default;
           _c("cascaderMulti", {
             attrs: { data: _vm.codes, placeholder: "切换点" },
             model: {
-              value: _vm.code,
+              value: _vm.ipt_data.code,
               callback: function($$v) {
-                _vm.code = $$v
+                _vm.$set(_vm.ipt_data, "code", $$v)
               },
-              expression: "code"
+              expression: "ipt_data.code"
             }
           })
         ],
@@ -70486,7 +70488,13 @@ exports.default = _default;
       _vm._v(" "),
       _c(
         "div",
-        [_c("Button", { attrs: { type: "primary" } }, [_vm._v("搜索")])],
+        [
+          _c(
+            "Button",
+            { attrs: { type: "primary" }, on: { click: _vm.search } },
+            [_vm._v("搜索")]
+          )
+        ],
         1
       )
     ]),
@@ -70495,12 +70503,42 @@ exports.default = _default;
       "div",
       { staticClass: "dimensional" },
       [
-        _vm._l(_vm.items, function(item, index) {
+        _vm._l(_vm.ipt_data.items, function(item, index) {
           return _c("div", { key: index, staticClass: "item" }, [
             _vm._v("\n      " + _vm._s(item.name) + "\n      "),
-            _c("span", [_c("Input", { staticStyle: { width: "60px" } })], 1),
+            _c(
+              "span",
+              [
+                _c("Input", {
+                  staticStyle: { width: "60px" },
+                  model: {
+                    value: item.x,
+                    callback: function($$v) {
+                      _vm.$set(item, "x", $$v)
+                    },
+                    expression: "item.x"
+                  }
+                })
+              ],
+              1
+            ),
             _vm._v("X\n      "),
-            _c("span", [_c("Input", { staticStyle: { width: "60px" } })], 1)
+            _c(
+              "span",
+              [
+                _c("Input", {
+                  staticStyle: { width: "60px" },
+                  model: {
+                    value: item.y,
+                    callback: function($$v) {
+                      _vm.$set(item, "y", $$v)
+                    },
+                    expression: "item.y"
+                  }
+                })
+              ],
+              1
+            )
           ])
         }),
         _vm._v(" "),
@@ -70642,9 +70680,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
 var _default = (_created$data$created = {
   created: function created() {
-    console.log(this.$route);
+    console.log(this.printData);
   },
   data: function data() {
     return {
@@ -70753,9 +70797,28 @@ exports.default = _default;
       ])
     ]),
     _vm._v(" "),
-    _vm._m(0),
+    _c(
+      "div",
+      { staticClass: "parameter" },
+      [
+        _c("h1", [_vm._v("title:" + _vm._s(_vm.printData.code))]),
+        _vm._v(" "),
+        _vm._l(_vm.printData.items, function(item) {
+          return _c("div", { staticClass: "fixed" }, [
+            _c("div", { staticClass: "fixed box" }, [
+              _c("div", [_vm._v("name:" + _vm._s(item.name))]),
+              _vm._v(" "),
+              _c("div", [_vm._v("x:" + _vm._s(item.x))]),
+              _vm._v(" "),
+              _c("div", [_vm._v("y:" + _vm._s(item.y))])
+            ])
+          ])
+        })
+      ],
+      2
+    ),
     _vm._v(" "),
-    _vm._m(1),
+    _vm._m(0),
     _vm._v(" "),
     _c(
       "div",
@@ -70770,16 +70833,6 @@ exports.default = _default;
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "parameter" }, [
-      _c("h1", [_vm._v("title:")]),
-      _vm._v(" "),
-      _c("div", [_vm._v("固定参数")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -70842,6 +70895,9 @@ var _print = _interopRequireDefault(require("../view/print.vue"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = [{
+  path: '/',
+  redirect: 'list'
+}, {
   path: '/list',
   component: _list.default,
   name: 'list'
@@ -73572,7 +73628,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "11537" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "13456" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

@@ -44,20 +44,20 @@
     </div>
     <div class="switching">
       <div class="point">
-        <cascaderMulti v-model="code" :data="codes" placeholder="切换点"></cascaderMulti>
+        <cascaderMulti v-model="ipt_data.code" :data="codes" placeholder="切换点"></cascaderMulti>
       </div>
       <div>
-        <Button type="primary">搜索</Button>
+        <Button @click="search" type="primary">搜索</Button>
       </div>
     </div>
     <div class="dimensional">
-      <div class="item" v-for="(item,index) in items" :key="index">
+      <div class="item" v-for="(item,index) in ipt_data.items" :key="index">
         {{item.name}}
         <span>
-          <Input style="width: 60px"/>
+          <Input style="width: 60px" v-model="item.x"/>
         </span>X
         <span>
-          <Input style="width: 60px"/>
+          <Input style="width: 60px" v-model="item.y"/>
         </span>
       </div>
       <br>
@@ -79,48 +79,49 @@ import db from "./db.json";
 export default {
   data() {
     return {
-      items: [
-        { name: "name", x: "12", y: "122" },
-        { name: "name", x: "12", y: "122" },
-        { name: "name", x: "12", y: "122" },
-        { name: "name", x: "12", y: "122" },
-        { name: "name", x: "12", y: "122" },
-        { name: "name", x: "12", y: "122" },
-        { name: "name", x: "12", y: "122" },
-        { name: "name", x: "12", y: "122" },
-        { name: "name", x: "12", y: "122" },
-        { name: "name", x: "12", y: "122" },
-        { name: "name", x: "12", y: "122" },
-        { name: "name", x: "12", y: "122" }
-      ],
       ipt_data: {
-        id: 20020032300,  //编号
+        id: 20020032300, //编号
         date: "2019-04-20", //日期
         client: "", //客户
-        phone: "",  //电话
-        salesperson: "",//销售人
-        amount: "",//金额
-        status: "",//状态
-        map: "",//地址
-        period: "",//发货期
+        phone: "", //电话
+        salesperson: "", //销售人
+        amount: "", //金额
+        status: "", //状态
+        map: "", //地址
+        period: "", //发货期
         quantity: "", //数量
-        item: {}
+        code: [],
+        items: [
+          { name: "as", x: "12", y: "1226" },
+          { name: "ds", x: "1321", y: "1225" },
+          { name: "fs", x: "2132", y: "1242" },
+          { name: "sc", x: "22", y: "1223" },
+          { name: "re", x: "36", y: "1222" },
+          { name: "hg", x: "123", y: "1221" },
+          { name: "ui", x: "19", y: "12223" },
+          { name: "hj", x: "22", y: "1222" },
+          { name: "mh", x: "132", y: "1222" },
+          { name: "kh", x: "12", y: "1212" },
+          { name: "sg", x: "112", y: "922" },
+          { name: "dv", x: "142", y: "1228" }
+        ]
       },
-      code: [],
       codes: db.switch_list
     };
   },
-  mounted(){
-    console.log(this.$route.params)
-    for(var x in this.$route.params){
-      this.ipt_data[x]=this.$route.params[x]
+  mounted() {
+    for (var x in this.$route.params) {
+      this.ipt_data[x] = this.$route.params[x];
     }
   },
   methods: {
+    search() {
+      console.log(this.ipt_data.code);
+    },
     save() {
       this.$Modal.success({
-        title: '消息',
-        content: '保存成功！'
+        title: "消息",
+        content: "保存成功！"
       });
     },
     print() {

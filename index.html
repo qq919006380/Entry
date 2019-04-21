@@ -12,13 +12,14 @@
         }
     </style>
 </head>
+
 <body>
     <div id="app">
         <i-Menu @on-select='onMenu' style="float:left" :open-names="['1']" :active-name="activeName">
             <Submenu name="1" on-select='on'>
                 <template slot="title">菜单</template>
-                <menu-item  name="list">信息</menu-item>
-                <menu-item  name="details">查看详情</menu-item>
+                <menu-item name="list">信息</menu-item>
+                <menu-item name="details">查看详情</menu-item>
                 <menu-item name="print">打印</menu-item>
             </Submenu>
         </i-Menu>
@@ -28,4 +29,5 @@
     </div>
     <script src="./app.js"></script>
 </body>
+
 </html>

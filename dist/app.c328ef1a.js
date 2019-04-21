@@ -70133,22 +70133,7 @@ module.exports = {
     "label": "罗马柱"
   }]
 };
-},{}],"view/eventBus.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _vue = _interopRequireDefault(require("vue"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _default = new _vue.default();
-
-exports.default = _default;
-},{"vue":"node_modules/vue/dist/vue.common.js"}],"view/details.vue":[function(require,module,exports) {
+},{}],"view/details.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -70158,10 +70143,15 @@ exports.default = void 0;
 
 var _db = _interopRequireDefault(require("./db.json"));
 
-var _eventBus = _interopRequireDefault(require("./eventBus.js"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -70284,6 +70274,8 @@ var _default = {
         y: "122"
       }],
       ipt_data: {
+        id: 20020032300,
+        date: "2019-04-20",
         client: "",
         phone: "",
         salesperson: "",
@@ -70292,18 +70284,25 @@ var _default = {
         map: "",
         period: "",
         quantity: "",
-        code: ""
+        code: "",
+        item: {}
       },
       code: [],
-      codes: _db.default.switch_list,
-      id: 20020032300,
-      date: "2019-04-20"
+      codes: _db.default.switch_list
     };
   },
   methods: {
+    save: function save() {
+      this.$Modal.success({
+        title: '消息',
+        content: '保存成功！'
+      });
+    },
     print: function print() {
-      _eventBus.default.$emit("getTarget", 'this.ipt_data'); // this.$router.push('print');
-
+      this.$router.push({
+        name: "print",
+        params: this.ipt_data
+      });
     }
   }
 };
@@ -70323,9 +70322,13 @@ exports.default = _default;
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "title" }, [
       _vm._v("\n    编号：\n    "),
-      _c("span", { staticClass: "underline" }, [_vm._v(_vm._s(_vm.id))]),
+      _c("span", { staticClass: "underline" }, [
+        _vm._v(_vm._s(_vm.ipt_data.id))
+      ]),
       _vm._v("\n    时间：\n    "),
-      _c("span", { staticClass: "underline" }, [_vm._v(_vm._s(_vm.date))])
+      _c("span", { staticClass: "underline" }, [
+        _vm._v(_vm._s(_vm.ipt_data.date))
+      ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "entry" }, [
@@ -70487,6 +70490,7 @@ exports.default = _default;
     _c("div", { staticClass: "switching" }, [
       _c(
         "div",
+        { staticClass: "point" },
         [
           _c("cascaderMulti", {
             attrs: { data: _vm.codes, placeholder: "切换点" },
@@ -70522,17 +70526,37 @@ exports.default = _default;
           ])
         }),
         _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c("Button", { attrs: { type: "primary" } }, [_vm._v("保存")]),
+        _c("br")
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "footer" },
+      [
+        _c("Button", { attrs: { type: "primary" }, on: { click: _vm.save } }, [
+          _vm._v("保存")
+        ]),
         _vm._v(" "),
         _c("Button", { on: { click: _vm.print } }, [_vm._v("打印")])
       ],
-      2
+      1
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", { staticClass: "img" }, [_c("h1", [_vm._v("imgData")])])
+    ])
+  }
+]
 render._withStripped = true
 
           return {
@@ -70565,7 +70589,7 @@ render._withStripped = true
       
       }
     })();
-},{"./db.json":"view/db.json","./eventBus.js":"view/eventBus.js","_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/print.vue":[function(require,module,exports) {
+},{"./db.json":"view/db.json","_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/print.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -70573,9 +70597,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _eventBus = _interopRequireDefault(require("./eventBus.js"));
+var _created$data$created;
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 //
 //
@@ -70622,24 +70646,33 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-var _default = {
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = (_created$data$created = {
+  created: function created() {
+    console.log(this.$route);
+  },
   data: function data() {
     return {
-      xxx: undefined
+      printData: undefined
     };
-  },
-  created: function created() {
-    var _this = this;
-
-    _eventBus.default.$on("getTarget", function (target) {
-      _this.xxx = target;
-      console.log(_this.xxx);
-    });
-  },
-  methods: {
-    on: function on() {}
   }
-};
+}, _defineProperty(_created$data$created, "created", function created() {
+  this.printData = this.$route.params;
+}), _defineProperty(_created$data$created, "methods", {}), _created$data$created);
+
 exports.default = _default;
         var $dea866 = exports.default || module.exports;
       
@@ -70653,30 +70686,99 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { on: { click: _vm.on } }, [
-    _vm._m(0),
+  return _c("div", [
+    _c("div", { staticClass: "title" }, [
+      _c("span", [_vm._v("编号:")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "underline" }, [
+        _vm._v(_vm._s(_vm.printData.id))
+      ]),
+      _vm._v(" "),
+      _c("span", [_vm._v("时间:")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "underline" }, [
+        _vm._v(_vm._s(_vm.printData.date))
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "txt" }, [
-      _vm._m(1),
+      _c("div", [
+        _c("span", [_vm._v("客户")]),
+        _vm._v(" "),
+        _c("span", { staticClass: "line" }, [
+          _vm._v(_vm._s(_vm.printData.client))
+        ])
+      ]),
       _vm._v(" "),
-      _vm._m(2),
+      _c("div", [
+        _c("span", [_vm._v("电话")]),
+        _vm._v(" "),
+        _c("span", { staticClass: "line" }, [
+          _vm._v(_vm._s(_vm.printData.phone))
+        ])
+      ]),
       _vm._v(" "),
-      _vm._m(3),
+      _c("div", [
+        _c("span", [_vm._v("销售人")]),
+        _vm._v(" "),
+        _c("span", { staticClass: "line" }, [
+          _vm._v(_vm._s(_vm.printData.salesperson))
+        ])
+      ]),
       _vm._v(" "),
-      _vm._m(4),
+      _c("div", [
+        _c("span", [_vm._v("金额")]),
+        _vm._v(" "),
+        _c("span", { staticClass: "line" }, [
+          _vm._v(_vm._s(_vm.printData.amount))
+        ])
+      ]),
       _vm._v(" "),
-      _vm._m(5),
+      _c("div", [
+        _c("span", [_vm._v("状态")]),
+        _vm._v(" "),
+        _c("span", { staticClass: "line" }, [
+          _vm._v(_vm._s(_vm.printData.status))
+        ])
+      ]),
       _vm._v(" "),
-      _vm._m(6),
+      _c("div", [
+        _c("span", [_vm._v("地址")]),
+        _vm._v(" "),
+        _c("span", { staticClass: "line" }, [_vm._v(_vm._s(_vm.printData.map))])
+      ]),
       _vm._v(" "),
-      _vm._m(7),
+      _c("div", [
+        _c("span", [_vm._v("发货时间")]),
+        _vm._v(" "),
+        _c("span", { staticClass: "line" }, [
+          _vm._v(_vm._s(_vm.printData.period))
+        ])
+      ]),
       _vm._v(" "),
       _c("div", [
         _c("span", [_vm._v("数量")]),
         _vm._v(" "),
-        _c("span", { staticClass: "underline" }, [_vm._v(_vm._s(_vm.xxx))])
+        _c("span", { staticClass: "line" }, [
+          _vm._v(_vm._s(_vm.printData.quantity))
+        ])
       ])
-    ])
+    ]),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "footer" },
+      [
+        _c("Button", { attrs: { size: "large" }, on: { click: _vm.print } }, [
+          _vm._v("打印")
+        ])
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = [
@@ -70684,84 +70786,22 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "title" }, [
-      _c("span", [_vm._v("编号:")]),
+    return _c("div", { staticClass: "parameter" }, [
+      _c("h1", [_vm._v("title:")]),
       _vm._v(" "),
-      _c("span", { staticClass: "underline" }),
-      _vm._v(" "),
-      _c("span", [_vm._v("时间:")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "underline" })
+      _c("div", [_vm._v("固定参数")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("span", [_vm._v("客户")]),
+    return _c("div", { staticClass: "img" }, [
+      _c("div", { staticClass: "titleImg" }, [_vm._v("img")]),
       _vm._v(" "),
-      _c("span", { staticClass: "underline" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("span", [_vm._v("电话")]),
+      _c("div", { staticClass: "titleImg" }, [_vm._v("img")]),
       _vm._v(" "),
-      _c("span", { staticClass: "underline" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("span", [_vm._v("销售人")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "underline" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("span", [_vm._v("金额")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "underline" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("span", [_vm._v("状态")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "underline" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("span", [_vm._v("地址")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "underline" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("span", [_vm._v("发货时间")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "underline" })
+      _c("div", [_c("div", { staticClass: "itemImg" }, [_vm._v("img")])])
     ])
   }
 ]
@@ -70797,7 +70837,7 @@ render._withStripped = true
       
       }
     })();
-},{"./eventBus.js":"view/eventBus.js","_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"router/router.js":[function(require,module,exports) {
+},{"_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"router/router.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -73544,7 +73584,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "6541" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1646" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

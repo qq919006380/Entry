@@ -2,9 +2,9 @@
   <div class="container">
     <div class="title">
       编号：
-      <span class="underline">{{id}}</span>
+      <span class="underline">{{ipt_data.id}}</span>
       时间：
-      <span class="underline">{{date}}</span>
+      <span class="underline">{{ipt_data.date}}</span>
     </div>
     <div class="entry">
       <div>
@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="switching">
-      <div>
+      <div class="point">
         <cascaderMulti v-model="code" :data="codes" placeholder="切换点"></cascaderMulti>
       </div>
       <div>
@@ -61,7 +61,14 @@
         </span>
       </div>
       <br>
-      <Button type="primary">保存</Button>
+    </div>
+    <div>
+      <div class="img">
+        <h1>imgData</h1>
+      </div>
+    </div>
+    <div class="footer">
+      <Button @click="save" type="primary">保存</Button>
       <Button @click="print">打印</Button>
     </div>
   </div>
@@ -69,7 +76,6 @@
 
 <script>
 import db from "./db.json";
-import Bus from "./eventBus.js";
 export default {
   data() {
     return {
@@ -88,6 +94,8 @@ export default {
         { name: "name", x: "12", y: "122" }
       ],
       ipt_data: {
+        id: 20020032300,
+        date: "2019-04-20",
         client: "",
         phone: "",
         salesperson: "",
@@ -96,18 +104,25 @@ export default {
         map: "",
         period: "",
         quantity: "",
-        code: ""
+        code: "",
+        item: {}
       },
       code: [],
-      codes: db.switch_list,
-      id: 20020032300,
-      date: "2019-04-20"
+      codes: db.switch_list
     };
   },
   methods: {
+    save() {
+      this.$Modal.success({
+        title: '消息',
+        content: '保存成功！'
+      });
+    },
     print() {
-      Bus.$emit("getTarget", 'this.ipt_data');
-      // this.$router.push('print');
+      this.$router.push({
+        name: "print",
+        params: this.ipt_data
+      });
     }
   }
 };
@@ -138,11 +153,22 @@ export default {
 .switching > div {
   display: inline-block;
 }
+.switching > .point {
+  width: 600px;
+}
 .dimensional {
-  margin: 150px 0;
+  margin: 55px 0;
+  text-align: left;
 }
 .dimensional > .item {
   display: inline-block;
   margin: 10px 20px;
+}
+.img {
+  background: #eee;
+  padding: 50px;
+}
+.footer {
+  margin: 60px 0;
 }
 </style>

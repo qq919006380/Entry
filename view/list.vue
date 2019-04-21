@@ -23,16 +23,6 @@
     <Modal v-model="modal1" title="Common Modal dialog box title" @on-ok="ok">
       <Row class="line">
         <Col span="12">
-          <div class="i">编号:</div>
-          <Input class="modal_ipt"/>
-        </Col>
-        <Col span="12">
-          <div class="i">日期:</div>
-          <Input class="modal_ipt"/>
-        </Col>
-      </Row>
-      <Row class="line">
-        <Col span="12">
           <div class="i">客户:</div>
           <Input class="modal_ipt"/>
         </Col>

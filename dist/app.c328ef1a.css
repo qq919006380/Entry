@@ -99,15 +99,16 @@
 }
 .img[data-v-dea866] {
   text-align: center;
-  width: 740px;
+  width: 794px;
   margin: auto;
   border: solid 1px;
-  height: 100vh;
+  height: 1123px;
 }
 .img > .titleImg[data-v-dea866],
 .img > div .itemImg[data-v-dea866] {
   display: inline-block;
   border: solid 1px;
+  margin:10px
 }
 .img > div[data-v-dea866] {
   text-align: left;

@@ -69655,16 +69655,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default = {
   methods: {
     ok: function ok() {}
@@ -69864,35 +69854,6 @@ exports.default = _default;
           }
         },
         [
-          _c(
-            "Row",
-            { staticClass: "line" },
-            [
-              _c(
-                "Col",
-                { attrs: { span: "12" } },
-                [
-                  _c("div", { staticClass: "i" }, [_vm._v("编号:")]),
-                  _vm._v(" "),
-                  _c("Input", { staticClass: "modal_ipt" })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "Col",
-                { attrs: { span: "12" } },
-                [
-                  _c("div", { staticClass: "i" }, [_vm._v("日期:")]),
-                  _vm._v(" "),
-                  _c("Input", { staticClass: "modal_ipt" })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
           _c(
             "Row",
             { staticClass: "line" },

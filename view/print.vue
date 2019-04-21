@@ -114,15 +114,16 @@ export default {
 }
 .img {
   text-align: center;
-  width: 740px;
+  width: 794px;
   margin: auto;
   border: solid 1px;
-  height: 100vh;
+  height: 1123px;
 }
 .img > .titleImg,
 .img > div .itemImg {
   display: inline-block;
   border: solid 1px;
+  margin:10px
 }
 .img > div {
   text-align: left;

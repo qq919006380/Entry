@@ -7,5 +7,6 @@
 dist/index
 ```
 /app.f6e3dd72.css 换上 ./app.f6e3dd72.css
-/app.f6e3dd72.js ./app.f6e3dd72.js
+/app.f6e3dd72.js 换上 ./app.f6e3dd72.js
 ```
+

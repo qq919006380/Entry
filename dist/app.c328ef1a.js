@@ -5,6 +5,8 @@
 //
 // anything defined in a previous bundle is accessed via the
 // orig method which is the require for previous bundles
+
+// eslint-disable-next-line no-global-assign
 parcelRequire = (function (modules, cache, entry, globalName) {
   // Save the require from previous bundle to this closure if any
   var previousRequire = typeof parcelRequire === 'function' && parcelRequire;
@@ -75,16 +77,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     }, {}];
   };
 
-  var error;
   for (var i = 0; i < entry.length; i++) {
-    try {
-      newRequire(entry[i]);
-    } catch (e) {
-      // Save first error but execute all entries
-      if (!error) {
-        error = e;
-      }
-    }
+    newRequire(entry[i]);
   }
 
   if (entry.length) {
@@ -109,13 +103,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   // Override the current require with this new one
-  parcelRequire = newRequire;
-
-  if (error) {
-    // throw error from earlier, _after updating parcelRequire_
-    throw error;
-  }
-
   return newRequire;
 })({"node_modules/vue/dist/vue.common.dev.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -12064,7 +12051,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./vue.common.dev.js');
 }
-},{"./vue.common.dev.js":"node_modules/vue/dist/vue.common.dev.js"}],"node_modules/process/browser.js":[function(require,module,exports) {
+},{"./vue.common.dev.js":"node_modules/vue/dist/vue.common.dev.js"}],"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -12236,6 +12223,7 @@ Item.prototype.run = function () {
 };
 
 process.title = 'browser';
+process.browser = true;
 process.env = {};
 process.argv = [];
 process.version = ''; // empty string to avoid regexp issues
@@ -63713,7 +63701,7 @@ var process = require("process");
     }])
   );
 });
-},{"vue":"node_modules/vue/dist/vue.common.js","process":"node_modules/process/browser.js"}],"node_modules/cascader-multi/dist/cascader-multi.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","process":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/node_modules/process/browser.js"}],"node_modules/cascader-multi/dist/cascader-multi.js":[function(require,module,exports) {
 var define;
 !function (e, t) {
   "object" == typeof exports && "object" == typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define("cascaderMulti", [], t) : "object" == typeof exports ? exports.cascaderMulti = t() : e.cascaderMulti = t();
@@ -63782,7 +63770,7 @@ var define;
     }
 
     function r(e) {
-      return "";
+      return "/*# sourceMappingURL=data:application/json;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(e)))) + " */";
     }
 
     e.exports = function (e) {
@@ -69265,7 +69253,7 @@ var define;
     t.a = o;
   }]);
 });
-},{}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{}],"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -69281,7 +69269,7 @@ function getBundleURL() {
   try {
     throw new Error();
   } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
 
     if (matches) {
       return getBaseURL(matches[0]);
@@ -69292,12 +69280,12 @@ function getBundleURL() {
 }
 
 function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
 }
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -69332,12 +69320,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/iview/dist/styles/iview.css":[function(require,module,exports) {
+},{"./bundle-url":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/iview/dist/styles/iview.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./fonts\\ionicons.woff2":[["ionicons.d7280122.woff2","node_modules/iview/dist/styles/fonts/ionicons.woff2"],"node_modules/iview/dist/styles/fonts/ionicons.woff2"],"./fonts\\ionicons.woff":[["ionicons.ff20eae3.woff","node_modules/iview/dist/styles/fonts/ionicons.woff"],"node_modules/iview/dist/styles/fonts/ionicons.woff"],"./fonts\\ionicons.ttf":[["ionicons.0edd5608.ttf","node_modules/iview/dist/styles/fonts/ionicons.ttf"],"node_modules/iview/dist/styles/fonts/ionicons.ttf"],"./fonts\\ionicons.svg":[["ionicons.1e197aa8.svg","node_modules/iview/dist/styles/fonts/ionicons.svg"],"node_modules/iview/dist/styles/fonts/ionicons.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
+},{"./fonts\\ionicons.woff2":[["ionicons.d7280122.woff2","node_modules/iview/dist/styles/fonts/ionicons.woff2"],"node_modules/iview/dist/styles/fonts/ionicons.woff2"],"./fonts\\ionicons.woff":[["ionicons.ff20eae3.woff","node_modules/iview/dist/styles/fonts/ionicons.woff"],"node_modules/iview/dist/styles/fonts/ionicons.woff"],"./fonts\\ionicons.ttf":[["ionicons.0edd5608.ttf","node_modules/iview/dist/styles/fonts/ionicons.ttf"],"node_modules/iview/dist/styles/fonts/ionicons.ttf"],"./fonts\\ionicons.svg":[["ionicons.1e197aa8.svg","node_modules/iview/dist/styles/fonts/ionicons.svg"],"node_modules/iview/dist/styles/fonts/ionicons.svg"],"_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
 var Vue // late bind
 var version
 var map = Object.create(null)
@@ -69963,7 +69951,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/db.json":[function(require,module,exports) {
+},{"_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/db.json":[function(require,module,exports) {
 module.exports = {
   "switch_list": [{
     "value": 8,
@@ -70109,7 +70097,600 @@ module.exports = {
     "label": "罗马柱"
   }]
 };
-},{}],"view/details.vue":[function(require,module,exports) {
+},{}],"components/Test.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  data: function data() {
+    return {
+      selected: [],
+      switch_list: [{
+        id: 26,
+        option_list: [{
+          big_img: "",
+          id: 3,
+          option_id: null,
+          small_img: "",
+          title: "彩钢门"
+        }, {
+          big_img: "",
+          id: 4,
+          option_id: null,
+          small_img: "",
+          title: "防爆门"
+        }],
+        switch_id: null,
+        title: "风格"
+      }, {
+        id: 28,
+        option_list: [{
+          big_img: "",
+          id: 5,
+          option_id: 3,
+          small_img: "",
+          title: "单门"
+        }, {
+          big_img: "",
+          id: 6,
+          option_id: 3,
+          small_img: "",
+          title: "双门"
+        }, {
+          big_img: "",
+          id: 7,
+          option_id: 3,
+          small_img: "",
+          title: "子母门"
+        }, {
+          big_img: "",
+          id: 8,
+          option_id: 3,
+          small_img: "",
+          title: "四门平开"
+        }, {
+          big_img: "",
+          id: 9,
+          option_id: 3,
+          small_img: "",
+          title: "四门子母"
+        }, {
+          big_img: "",
+          id: 14,
+          option_id: 4,
+          small_img: "",
+          title: "单门"
+        }, {
+          big_img: "",
+          id: 15,
+          option_id: 4,
+          small_img: "",
+          title: "双门"
+        }, {
+          big_img: "",
+          id: 16,
+          option_id: 4,
+          small_img: "",
+          title: "子母门"
+        }, {
+          big_img: "",
+          id: 17,
+          option_id: 4,
+          small_img: "",
+          title: "四门平开"
+        }, {
+          big_img: "",
+          id: 18,
+          option_id: 4,
+          small_img: "",
+          title: "四门子母"
+        }],
+        switch_id: 26,
+        title: "类型"
+      }, {
+        id: 29,
+        option_list: [{
+          big_img: "",
+          id: 10,
+          option_id: 3,
+          small_img: "",
+          title: "内开"
+        }, {
+          big_img: "",
+          id: 11,
+          option_id: 3,
+          small_img: "",
+          title: "外开"
+        }, {
+          big_img: "",
+          id: 19,
+          option_id: 4,
+          small_img: "",
+          title: "内开"
+        }, {
+          big_img: "",
+          id: 20,
+          option_id: 4,
+          small_img: "",
+          title: "外开"
+        }],
+        switch_id: 26,
+        title: "开向"
+      }, {
+        id: 33,
+        option_list: [{
+          big_img: "",
+          id: 31,
+          option_id: 4,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 26,
+        title: "门扇款式"
+      }, {
+        id: 34,
+        option_list: [{
+          big_img: "",
+          id: 39,
+          option_id: 4,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 26,
+        title: "门头花款式"
+      }, {
+        id: 35,
+        option_list: [{
+          big_img: "",
+          id: 32,
+          option_id: 4,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 26,
+        title: "皇冠头款式"
+      }, {
+        id: 36,
+        option_list: [{
+          big_img: "",
+          id: 33,
+          option_id: 4,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 26,
+        title: "罗马柱款式"
+      }, {
+        id: 41,
+        option_list: [{
+          big_img: "",
+          id: 34,
+          option_id: 4,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 26,
+        title: "饰边"
+      }, {
+        id: 47,
+        option_list: [{
+          big_img: "",
+          id: 35,
+          option_id: 4,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 26,
+        title: "上板款式"
+      }, {
+        id: 48,
+        option_list: [{
+          big_img: "",
+          id: 36,
+          option_id: 4,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 26,
+        title: "中板款式"
+      }, {
+        id: 49,
+        option_list: [{
+          big_img: "",
+          id: 37,
+          option_id: 4,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 26,
+        title: "下板款式"
+      }, {
+        id: 50,
+        option_list: [{
+          big_img: "",
+          id: 38,
+          option_id: 4,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 26,
+        title: "门花款式"
+      }, {
+        id: 51,
+        option_list: [{
+          big_img: "",
+          id: 12,
+          option_id: 10,
+          small_img: "",
+          title: "60"
+        }, {
+          big_img: "",
+          id: 13,
+          option_id: 10,
+          small_img: "",
+          title: "80"
+        }, {
+          big_img: "",
+          id: 21,
+          option_id: 19,
+          small_img: "",
+          title: "无"
+        }, {
+          big_img: "",
+          id: 22,
+          option_id: 20,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 29,
+        title: "门扇工艺"
+      }, {
+        id: 52,
+        option_list: [{
+          big_img: "",
+          id: 23,
+          option_id: 21,
+          small_img: "",
+          title: "无"
+        }, {
+          big_img: "",
+          id: 24,
+          option_id: 22,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 51,
+        title: "企料工艺"
+      }, {
+        id: 54,
+        option_list: [{
+          big_img: "",
+          id: 26,
+          option_id: 24,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 52,
+        title: "留位"
+      }, {
+        id: 55,
+        option_list: [{
+          big_img: "",
+          id: 27,
+          option_id: 26,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 54,
+        title: "锁边"
+      }, {
+        id: 56,
+        option_list: [{
+          big_img: "",
+          id: 28,
+          option_id: 26,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 54,
+        title: "铰边"
+      }, {
+        id: 57,
+        option_list: [{
+          big_img: "",
+          id: 29,
+          option_id: 27,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 55,
+        title: "锁框"
+      }, {
+        id: 58,
+        option_list: [{
+          big_img: "",
+          id: 30,
+          option_id: 28,
+          small_img: "",
+          title: "无"
+        }],
+        switch_id: 56,
+        title: "铰框"
+      }, {
+        id: 59,
+        option_list: [{
+          big_img: "",
+          id: 40,
+          option_id: 4,
+          small_img: "",
+          title: "C1"
+        }],
+        switch_id: 26,
+        title: "框型"
+      }],
+      selectedCopy: []
+    };
+  },
+  created: function created() {
+    this.initData(null);
+    this.inputData();
+    this.selectedCopy = this.selected.slice(0);
+  },
+  methods: {
+    inputData: function inputData() {
+      this.$emit("listendata", this.selected);
+    },
+    initData: function initData(id) {
+      var index2 = 0;
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = this.switch_list[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var item = _step.value;
+          var index = 0;
+          var _iteratorNormalCompletion2 = true;
+          var _didIteratorError2 = false;
+          var _iteratorError2 = undefined;
+
+          try {
+            for (var _iterator2 = item.option_list[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+              var item1 = _step2.value;
+
+              if (item1.option_id == id) {
+                index++;
+
+                if (index == 1) {
+                  this.selected[index2] = item1.id;
+                  this.initData(item1.id);
+                }
+
+                this.$set(item1, "active", true);
+              }
+            }
+          } catch (err) {
+            _didIteratorError2 = true;
+            _iteratorError2 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
+                _iterator2.return();
+              }
+            } finally {
+              if (_didIteratorError2) {
+                throw _iteratorError2;
+              }
+            }
+          }
+
+          index2++;
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return != null) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+    },
+    removeData: function removeData(oldValue) {
+      var _iteratorNormalCompletion3 = true;
+      var _didIteratorError3 = false;
+      var _iteratorError3 = undefined;
+
+      try {
+        for (var _iterator3 = this.switch_list[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+          var item = _step3.value;
+          var _iteratorNormalCompletion4 = true;
+          var _didIteratorError4 = false;
+          var _iteratorError4 = undefined;
+
+          try {
+            for (var _iterator4 = item.option_list[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+              var item1 = _step4.value;
+
+              if (item1.option_id == oldValue) {
+                var index = this.selected.indexOf(item1.id);
+
+                if (index > -1) {
+                  this.selected[index] = undefined;
+                }
+
+                this.removeData(item1.id);
+                this.$set(item1, "active", false);
+              }
+            }
+          } catch (err) {
+            _didIteratorError4 = true;
+            _iteratorError4 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion4 && _iterator4.return != null) {
+                _iterator4.return();
+              }
+            } finally {
+              if (_didIteratorError4) {
+                throw _iteratorError4;
+              }
+            }
+          }
+        }
+      } catch (err) {
+        _didIteratorError3 = true;
+        _iteratorError3 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion3 && _iterator3.return != null) {
+            _iterator3.return();
+          }
+        } finally {
+          if (_didIteratorError3) {
+            throw _iteratorError3;
+          }
+        }
+      }
+    },
+    changeData: function changeData(index) {
+      var l = this.selected.length;
+
+      if (this.selectedCopy[index] != this.selected[index]) {
+        this.removeData(this.selectedCopy[index]);
+        this.initData(this.selected[index]);
+      }
+
+      this.selectedCopy = this.selected.slice(0);
+    }
+  }
+};
+exports.default = _default;
+        var $ef5491 = exports.default || module.exports;
+      
+      if (typeof $ef5491 === 'function') {
+        $ef5491 = $ef5491.options;
+      }
+    
+        /* template */
+        Object.assign($ef5491, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "select-list" },
+      _vm._l(_vm.switch_list, function(sw, index) {
+        return _c(
+          "div",
+          { key: sw.id, staticClass: "select-item" },
+          [
+            _c("span", [_vm._v(_vm._s(sw.title))]),
+            _vm._v(" "),
+            _c(
+              "Select",
+              {
+                staticStyle: { width: "400px" },
+                on: {
+                  change: function($event) {
+                    return _vm.changeData(index)
+                  },
+                  input: _vm.inputData
+                },
+                model: {
+                  value: _vm.selected[index],
+                  callback: function($$v) {
+                    _vm.$set(_vm.selected, index, $$v)
+                  },
+                  expression: "selected[index]"
+                }
+              },
+              _vm._l(sw.option_list, function(option) {
+                return option.active
+                  ? _c("Option", {
+                      key: option.id,
+                      attrs: { label: option.title, value: option.id }
+                    })
+                  : _vm._e()
+              }),
+              1
+            )
+          ],
+          1
+        )
+      }),
+      0
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$ef5491', $ef5491);
+          } else {
+            api.reload('$ef5491', $ef5491);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/details.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -70118,6 +70699,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _db = _interopRequireDefault(require("./db.json"));
+
+var _Test = _interopRequireDefault(require("../components/Test"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -70197,9 +70780,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
 var _default = {
+  created: function created() {},
+  components: {
+    test: _Test.default
+  },
   data: function data() {
     return {
+      data: "",
       ipt_data: {
         id: 20020032300,
         //编号
@@ -70281,8 +70872,12 @@ var _default = {
     }
   },
   methods: {
+    pointData: function pointData(data) {
+      console.log(data);
+      this.data = data;
+    },
     search: function search() {
-      console.log(this.ipt_data.code);
+      console.log(this.data);
     },
     save: function save() {
       this.$Modal.success({
@@ -70480,23 +71075,7 @@ exports.default = _default;
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "switching" }, [
-      _c(
-        "div",
-        { staticClass: "point" },
-        [
-          _c("cascaderMulti", {
-            attrs: { data: _vm.codes, placeholder: "切换点" },
-            model: {
-              value: _vm.ipt_data.code,
-              callback: function($$v) {
-                _vm.$set(_vm.ipt_data, "code", $$v)
-              },
-              expression: "ipt_data.code"
-            }
-          })
-        ],
-        1
-      ),
+      _c("div", [_c("test", { on: { listendata: _vm.pointData } })], 1),
       _vm._v(" "),
       _c(
         "div",
@@ -70617,7 +71196,7 @@ render._withStripped = true
       
       }
     })();
-},{"./db.json":"view/db.json","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/print.vue":[function(require,module,exports) {
+},{"./db.json":"view/db.json","../components/Test":"components/Test.vue","_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/print.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -70890,7 +71469,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"router/router.js":[function(require,module,exports) {
+},{"_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"router/router.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -73613,7 +74192,7 @@ new _vue.default({
     }
   }
 });
-},{"vue":"node_modules/vue/dist/vue.common.js","iview":"node_modules/iview/dist/iview.js","cascader-multi":"node_modules/cascader-multi/dist/cascader-multi.js","iview/dist/styles/iview.css":"node_modules/iview/dist/styles/iview.css","./router/router.js":"router/router.js","vue-router":"node_modules/vue-router/dist/vue-router.esm.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","iview":"node_modules/iview/dist/iview.js","cascader-multi":"node_modules/cascader-multi/dist/cascader-multi.js","iview/dist/styles/iview.css":"node_modules/iview/dist/styles/iview.css","./router/router.js":"router/router.js","vue-router":"node_modules/vue-router/dist/vue-router.esm.js"}],"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -73635,46 +74214,26 @@ function Module(moduleName) {
 }
 
 module.bundle.Module = Module;
-var checkedAssets, assetsToAccept;
 var parent = module.bundle.parent;
 
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2383" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "4798" + '/');
 
   ws.onmessage = function (event) {
-    checkedAssets = {};
-    assetsToAccept = [];
     var data = JSON.parse(event.data);
 
     if (data.type === 'update') {
-      var handled = false;
+      console.clear();
+      data.assets.forEach(function (asset) {
+        hmrApply(global.parcelRequire, asset);
+      });
       data.assets.forEach(function (asset) {
         if (!asset.isNew) {
-          var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
-
-          if (didAccept) {
-            handled = true;
-          }
+          hmrAccept(global.parcelRequire, asset.id);
         }
-      }); // Enable HMR for CSS by default.
-
-      handled = handled || data.assets.every(function (asset) {
-        return asset.type === 'css' && asset.generated.js;
       });
-
-      if (handled) {
-        console.clear();
-        data.assets.forEach(function (asset) {
-          hmrApply(global.parcelRequire, asset);
-        });
-        assetsToAccept.forEach(function (v) {
-          hmrAcceptRun(v[0], v[1]);
-        });
-      } else {
-        window.location.reload();
-      }
     }
 
     if (data.type === 'reload') {
@@ -73762,7 +74321,7 @@ function hmrApply(bundle, asset) {
   }
 }
 
-function hmrAcceptCheck(bundle, id) {
+function hmrAccept(bundle, id) {
   var modules = bundle.modules;
 
   if (!modules) {
@@ -73770,27 +74329,9 @@ function hmrAcceptCheck(bundle, id) {
   }
 
   if (!modules[id] && bundle.parent) {
-    return hmrAcceptCheck(bundle.parent, id);
+    return hmrAccept(bundle.parent, id);
   }
 
-  if (checkedAssets[id]) {
-    return;
-  }
-
-  checkedAssets[id] = true;
-  var cached = bundle.cache[id];
-  assetsToAccept.push([bundle, id]);
-
-  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
-    return true;
-  }
-
-  return getParents(global.parcelRequire, id).some(function (id) {
-    return hmrAcceptCheck(global.parcelRequire, id);
-  });
-}
-
-function hmrAcceptRun(bundle, id) {
   var cached = bundle.cache[id];
   bundle.hotData = {};
 
@@ -73815,6 +74356,10 @@ function hmrAcceptRun(bundle, id) {
 
     return true;
   }
+
+  return getParents(global.parcelRequire, id).some(function (id) {
+    return hmrAccept(global.parcelRequire, id);
+  });
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
-//# sourceMappingURL=/app.c328ef1a.js.map
+},{}]},{},["../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
+//# sourceMappingURL=/app.c328ef1a.map

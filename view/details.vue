@@ -43,8 +43,11 @@
       </div>
     </div>
     <div class="switching">
-      <div class="point">
+      <!-- <div class="point">
         <cascaderMulti v-model="ipt_data.code" :data="codes" placeholder="切换点"></cascaderMulti>
+      </div>-->
+      <div>
+        <test v-on:listendata="pointData"></test>
       </div>
       <div>
         <Button @click="search" type="primary">搜索</Button>
@@ -76,9 +79,15 @@
 
 <script>
 import db from "./db.json";
+import Test from "../components/Test";
 export default {
+  created() {},
+  components: {
+    test: Test
+  },
   data() {
     return {
+      data: "",
       ipt_data: {
         id: 20020032300, //编号
         date: "2019-04-20", //日期
@@ -115,8 +124,12 @@ export default {
     }
   },
   methods: {
+    pointData(data) {
+      console.log(data)
+      this.data=data
+    },
     search() {
-      console.log(this.ipt_data.code);
+      console.log(this.data);
     },
     save() {
       this.$Modal.success({

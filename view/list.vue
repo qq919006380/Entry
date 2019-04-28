@@ -47,8 +47,18 @@
 
 <script>
 export default {
+  created() {
+    this.press().run()
+  },
   methods: {
-    ok() {}
+    ok() {},
+    press() {
+      return {
+        run:function(){
+          alert(123)
+        }
+      };
+    }
   },
   data() {
     return {

@@ -5,6 +5,8 @@
 //
 // anything defined in a previous bundle is accessed via the
 // orig method which is the require for previous bundles
+
+// eslint-disable-next-line no-global-assign
 parcelRequire = (function (modules, cache, entry, globalName) {
   // Save the require from previous bundle to this closure if any
   var previousRequire = typeof parcelRequire === 'function' && parcelRequire;
@@ -75,16 +77,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     }, {}];
   };
 
-  var error;
   for (var i = 0; i < entry.length; i++) {
-    try {
-      newRequire(entry[i]);
-    } catch (e) {
-      // Save first error but execute all entries
-      if (!error) {
-        error = e;
-      }
-    }
+    newRequire(entry[i]);
   }
 
   if (entry.length) {
@@ -109,13 +103,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   // Override the current require with this new one
-  parcelRequire = newRequire;
-
-  if (error) {
-    // throw error from earlier, _after updating parcelRequire_
-    throw error;
-  }
-
   return newRequire;
 })({"node_modules/vue/dist/vue.common.dev.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -12064,7 +12051,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./vue.common.dev.js');
 }
-},{"./vue.common.dev.js":"node_modules/vue/dist/vue.common.dev.js"}],"node_modules/process/browser.js":[function(require,module,exports) {
+},{"./vue.common.dev.js":"node_modules/vue/dist/vue.common.dev.js"}],"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -12236,6 +12223,7 @@ Item.prototype.run = function () {
 };
 
 process.title = 'browser';
+process.browser = true;
 process.env = {};
 process.argv = [];
 process.version = ''; // empty string to avoid regexp issues
@@ -63713,7 +63701,7 @@ var process = require("process");
     }])
   );
 });
-},{"vue":"node_modules/vue/dist/vue.common.js","process":"node_modules/process/browser.js"}],"node_modules/cascader-multi/dist/cascader-multi.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","process":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/node_modules/process/browser.js"}],"node_modules/cascader-multi/dist/cascader-multi.js":[function(require,module,exports) {
 var define;
 !function (e, t) {
   "object" == typeof exports && "object" == typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define("cascaderMulti", [], t) : "object" == typeof exports ? exports.cascaderMulti = t() : e.cascaderMulti = t();
@@ -63782,7 +63770,7 @@ var define;
     }
 
     function r(e) {
-      return "";
+      return "/*# sourceMappingURL=data:application/json;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(e)))) + " */";
     }
 
     e.exports = function (e) {
@@ -69265,7 +69253,7 @@ var define;
     t.a = o;
   }]);
 });
-},{}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{}],"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -69281,7 +69269,7 @@ function getBundleURL() {
   try {
     throw new Error();
   } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
 
     if (matches) {
       return getBaseURL(matches[0]);
@@ -69292,12 +69280,12 @@ function getBundleURL() {
 }
 
 function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
 }
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -69332,12 +69320,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/iview/dist/styles/iview.css":[function(require,module,exports) {
+},{"./bundle-url":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/iview/dist/styles/iview.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./fonts\\ionicons.woff2":[["ionicons.d7280122.woff2","node_modules/iview/dist/styles/fonts/ionicons.woff2"],"node_modules/iview/dist/styles/fonts/ionicons.woff2"],"./fonts\\ionicons.woff":[["ionicons.ff20eae3.woff","node_modules/iview/dist/styles/fonts/ionicons.woff"],"node_modules/iview/dist/styles/fonts/ionicons.woff"],"./fonts\\ionicons.ttf":[["ionicons.0edd5608.ttf","node_modules/iview/dist/styles/fonts/ionicons.ttf"],"node_modules/iview/dist/styles/fonts/ionicons.ttf"],"./fonts\\ionicons.svg":[["ionicons.1e197aa8.svg","node_modules/iview/dist/styles/fonts/ionicons.svg"],"node_modules/iview/dist/styles/fonts/ionicons.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
+},{"./fonts\\ionicons.woff2":[["ionicons.d7280122.woff2","node_modules/iview/dist/styles/fonts/ionicons.woff2"],"node_modules/iview/dist/styles/fonts/ionicons.woff2"],"./fonts\\ionicons.woff":[["ionicons.ff20eae3.woff","node_modules/iview/dist/styles/fonts/ionicons.woff"],"node_modules/iview/dist/styles/fonts/ionicons.woff"],"./fonts\\ionicons.ttf":[["ionicons.0edd5608.ttf","node_modules/iview/dist/styles/fonts/ionicons.ttf"],"node_modules/iview/dist/styles/fonts/ionicons.ttf"],"./fonts\\ionicons.svg":[["ionicons.1e197aa8.svg","node_modules/iview/dist/styles/fonts/ionicons.svg"],"node_modules/iview/dist/styles/fonts/ionicons.svg"],"_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
 var Vue // late bind
 var version
 var map = Object.create(null)
@@ -69668,8 +69656,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 var _default = {
+  created: function created() {
+    this.press().run();
+  },
   methods: {
-    ok: function ok() {}
+    ok: function ok() {},
+    press: function press() {
+      return {
+        run: function run() {
+          alert(123);
+        }
+      };
+    }
   },
   data: function data() {
     var _this = this,
@@ -69963,7 +69961,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/db.json":[function(require,module,exports) {
+},{"_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/db.json":[function(require,module,exports) {
 module.exports = {
   "switch_list": [{
     "value": 8,
@@ -70702,7 +70700,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/details.vue":[function(require,module,exports) {
+},{"_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/details.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -71208,7 +71206,7 @@ render._withStripped = true
       
       }
     })();
-},{"./db.json":"view/db.json","../components/Test":"components/Test.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/print.vue":[function(require,module,exports) {
+},{"./db.json":"view/db.json","../components/Test":"components/Test.vue","_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"view/print.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -71481,7 +71479,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"router/router.js":[function(require,module,exports) {
+},{"_css_loader":"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"router/router.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -74204,7 +74202,7 @@ new _vue.default({
     }
   }
 });
-},{"vue":"node_modules/vue/dist/vue.common.js","iview":"node_modules/iview/dist/iview.js","cascader-multi":"node_modules/cascader-multi/dist/cascader-multi.js","iview/dist/styles/iview.css":"node_modules/iview/dist/styles/iview.css","./router/router.js":"router/router.js","vue-router":"node_modules/vue-router/dist/vue-router.esm.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","iview":"node_modules/iview/dist/iview.js","cascader-multi":"node_modules/cascader-multi/dist/cascader-multi.js","iview/dist/styles/iview.css":"node_modules/iview/dist/styles/iview.css","./router/router.js":"router/router.js","vue-router":"node_modules/vue-router/dist/vue-router.esm.js"}],"../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -74226,46 +74224,26 @@ function Module(moduleName) {
 }
 
 module.bundle.Module = Module;
-var checkedAssets, assetsToAccept;
 var parent = module.bundle.parent;
 
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "10769" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "11232" + '/');
 
   ws.onmessage = function (event) {
-    checkedAssets = {};
-    assetsToAccept = [];
     var data = JSON.parse(event.data);
 
     if (data.type === 'update') {
-      var handled = false;
+      console.clear();
+      data.assets.forEach(function (asset) {
+        hmrApply(global.parcelRequire, asset);
+      });
       data.assets.forEach(function (asset) {
         if (!asset.isNew) {
-          var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
-
-          if (didAccept) {
-            handled = true;
-          }
+          hmrAccept(global.parcelRequire, asset.id);
         }
-      }); // Enable HMR for CSS by default.
-
-      handled = handled || data.assets.every(function (asset) {
-        return asset.type === 'css' && asset.generated.js;
       });
-
-      if (handled) {
-        console.clear();
-        data.assets.forEach(function (asset) {
-          hmrApply(global.parcelRequire, asset);
-        });
-        assetsToAccept.forEach(function (v) {
-          hmrAcceptRun(v[0], v[1]);
-        });
-      } else {
-        window.location.reload();
-      }
     }
 
     if (data.type === 'reload') {
@@ -74353,7 +74331,7 @@ function hmrApply(bundle, asset) {
   }
 }
 
-function hmrAcceptCheck(bundle, id) {
+function hmrAccept(bundle, id) {
   var modules = bundle.modules;
 
   if (!modules) {
@@ -74361,27 +74339,9 @@ function hmrAcceptCheck(bundle, id) {
   }
 
   if (!modules[id] && bundle.parent) {
-    return hmrAcceptCheck(bundle.parent, id);
+    return hmrAccept(bundle.parent, id);
   }
 
-  if (checkedAssets[id]) {
-    return;
-  }
-
-  checkedAssets[id] = true;
-  var cached = bundle.cache[id];
-  assetsToAccept.push([bundle, id]);
-
-  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
-    return true;
-  }
-
-  return getParents(global.parcelRequire, id).some(function (id) {
-    return hmrAcceptCheck(global.parcelRequire, id);
-  });
-}
-
-function hmrAcceptRun(bundle, id) {
   var cached = bundle.cache[id];
   bundle.hotData = {};
 
@@ -74406,6 +74366,10 @@ function hmrAcceptRun(bundle, id) {
 
     return true;
   }
+
+  return getParents(global.parcelRequire, id).some(function (id) {
+    return hmrAccept(global.parcelRequire, id);
+  });
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
-//# sourceMappingURL=/app.c328ef1a.js.map
+},{}]},{},["../../AppData/Roaming/nvm/v10.13.0/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
+//# sourceMappingURL=/app.c328ef1a.map
